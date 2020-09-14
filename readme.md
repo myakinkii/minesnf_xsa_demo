@@ -1,0 +1,1 @@
+combined minesnf fe+be repo with browserified lib to deploy to hana xsa

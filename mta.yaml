@@ -1,0 +1,27 @@
+ID: tst
+_schema-version: '2.1'
+version: 0.0.1
+modules:
+  - name: be
+    type: nodejs
+    path: be
+    provides:
+      - name: be_api
+        properties:
+          url: '${default-url}'
+  - name: fe
+    type: html5
+    path: fe
+    requires:
+      - name: ui5_160
+      - name: be_api
+        group: destinations
+        properties:
+          name: be_api
+          url: '~{url}'
+resources:
+  - name: ui5_160
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: sapui5_sb
+      service-plan: sapui5-1.60

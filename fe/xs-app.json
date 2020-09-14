@@ -1,0 +1,27 @@
+{
+	"welcomeFile": "webapp/index.html",
+	"authenticationMethod": "none",
+	"websockets": {
+		"enabled": true
+	},
+	"routes": [{
+		"source": "/be(.*)",
+		"target": "$1",
+		"destination": "be_api",
+		"authenticationType": "none"
+	},{
+		"source": "/(.*)",
+		"localDir": "resources",
+		"authenticationType": "none",	
+		"replace": {
+			"pathSuffixes": [
+				"index_webide.html"
+			],
+			"services": {
+				"sapui5_sb": {
+					"tag": "ui5"
+				}
+			}
+		}
+	}]
+}

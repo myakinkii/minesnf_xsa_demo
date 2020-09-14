@@ -1,0 +1,25 @@
+{
+  "name": "minesnf",
+  "version": "1.0.0",
+  "description": "minesNF backend",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/myakinkii/minesNF"
+  },
+  "subdomain": "minesnf",
+  "domains": [
+    "minesnf.com"
+  ],
+  "scripts": {
+    "start": "node ServMain.js"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "dependencies": {
+    "express": "4.17.x",
+    "express-session": "1.16.x",
+    "ws": "7.0.x"
+  }
+}

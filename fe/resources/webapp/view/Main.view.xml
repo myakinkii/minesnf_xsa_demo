@@ -1,0 +1,38 @@
+<mvc:View 
+	controllerName="com.minesnf.ui5client.controller.Main" 
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified"
+	xmlns="sap.m"
+	displayBlock="true">
+	<u:Shell showPane="{/showPane}">
+		<u:headItems>
+			<u:ShellHeadItem visible="{= !${/gameStarted} }" icon="{parts: [{path:'/page'}],formatter:'.formatPageIcon'}" press="switchPage" />
+			<u:ShellHeadItem icon="sap-icon://menu2" visible="{= ${/gameStarted} &amp;&amp; ${/gameInfo/coop} }" toggleEnabled="true" selected="{/showPane}" press="handleShowPane" />			
+			<u:ShellHeadItem visible="{= ${/gameStarted} &amp;&amp; !${/gameInfo/coop} }" icon="sap-icon://decline"  press="handleQuitGame" />
+			<u:ShellHeadItem visible="{= ${device>/system/desktop} &amp;&amp; ${/gameStarted} }" icon="sap-icon://move"  toggleEnabled="true"  selected="{/altKeyMode}"  press="handleAltToggle" />
+		</u:headItems>
+		<u:headEndItems>
+			<u:ShellHeadItem icon="sap-icon://employee-lookup" visible="{= !${/offlineMode} }" press="openUsersPopover" />
+			<u:ShellHeadItem toggleEnabled="true" selected="{/forceOfflineMode}" 
+				icon="{parts: [{path:'/offlineMode'}],formatter:'.formatModeIcon'}" visible="{/showOfflineButton}" press="switchMode" />
+			<!--<u:ShellHeadItem icon="sap-icon://log" visible="false" visible="{= ${/auth/type}!=='temp' }" press="handleLogOff" />-->
+		</u:headEndItems>
+		<u:user>
+			<u:ShellHeadUserItem  image="sap-icon://person-placeholder"  username="[{/auth/profile/level}] {/auth/user}"  showPopupIndicator="false" press="handleShowAuthDlg" />
+		</u:user>
+		<u:paneContent>
+			<core:Fragment fragmentName="com.minesnf.ui5client.view.Stash" type="XML" />
+		</u:paneContent>
+		<NavContainer id="app">
+			<pages>
+				<Page id="game" showHeader="false" ><core:Fragment fragmentName="com.minesnf.ui5client.view.Main" type="XML" /></Page>
+				<Page id="board" showHeader="false" />
+				<Page id="battle" showHeader="false" ><core:Fragment fragmentName="com.minesnf.ui5client.view.Battle" type="XML" /></Page>
+				<Page id="inv" showHeader="false" ><core:Fragment fragmentName="com.minesnf.ui5client.view.Inventory" type="XML" /></Page>
+			</pages>
+		</NavContainer>
+	</u:Shell>
+</mvc:View>

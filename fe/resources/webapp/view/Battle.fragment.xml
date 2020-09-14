@@ -1,0 +1,19 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:my="com.minesnf.ui5client.controls.comp"
+	xmlns:core="sap.ui.core">
+	<ScrollContainer height="100%" width="100%" horizontal="false" vertical="true">
+		<Panel content="{ path:'/battleInfo', sorter:{path:'name',comparator:'.handleSortProfiles'}}" >
+			<my:Profile
+				level="{level}" name="{name}" hp="{hp}" patk="{patk}" pdef="{pdef}" maxhp="{maxhp}" speed="{speed}"
+				state="{state}" target="{target}" attackers="{attackers}" curAP="{curAP}" maxAP="{maxAP}"
+				self="{/battleInfo/me/name}" selfState="{/battleInfo/me/state}" selfTarget="{/battleInfo/me/target}"
+				selfHP="{/battleInfo/me/hp}" selfAP="{/battleInfo/me/curAP}" selfMP="{/battleInfo/me/mana}"
+				coopFlag="{/gameInfo/coop}" mobFlag="{= !!${mob} }" castMode="{/castMode}"
+				currentEventKey="{eventKey}" currentEventText="{event}"
+				performAction="handlePerformAction" />
+		</Panel>
+		<List id="battleLog" width="100%" />
+	</ScrollContainer>	
+</core:FragmentDefinition>	

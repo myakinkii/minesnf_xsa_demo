@@ -1,0 +1,80 @@
+body{background:#eee;}
+
+body a:hover
+{cursor:default; text-decoration:none;}
+
+div#Main
+{
+ position:relative;
+ float:left;
+ text-align:left;
+ left:5px;
+ top:5px;
+}
+
+div#Side
+{
+ top:5px;
+ position:relative;
+ float:left;
+ text-align:left;
+ width:150px;
+ margin-left:20px;
+ margin-top:5px;
+}
+
+div.messageBlock
+{
+ width:500px;
+ white-space: pre-wrap;
+ word-wrap: break-word;
+}
+
+div#auth a, a:active, a:visited
+{color: #000; text-decoration:none;}
+
+div#auth a:hover
+{color: #f00; cursor:default; text-decoration:none;}
+
+div.messageBlock a:hover
+{cursor:default; text-decoration:none;}
+
+a.userObject
+{color: #999;}
+
+a.commandObject
+{color: #f99;}
+
+span.PartyMessage
+{
+ color: #6a3;
+ background-color: #eee;
+}
+
+a.partyObject
+{color: #6a3;}
+
+
+span.PrivateMessage
+{
+ color: #933;
+ background-color: #eee;
+}
+
+span.ShoutMessage
+{
+ color: #f00;
+}
+
+span.Result{color:#777;}
+
+span.Rank0{color:#aaa;}
+span.Rank1{color:#00f;}
+span.Rank2{color:#390;}
+span.Rank3{color:#f00;}
+span.Rank4{color:#309;}
+span.Rank5{color:#930;}
+span.Rank6{color:#099;}
+span.Rank7{color:#939;}
+span.Rank8{color:#000;}
+
